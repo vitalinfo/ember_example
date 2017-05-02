@@ -10,7 +10,9 @@ const Router = Ember.Router.extend(ApplicationRouteMixin, {
 Router.map(function() {
   this.route('login');
   this.route('signup');
-  this.route('dashboard');
+  this.route('dashboard', function(){
+		this.route('tasks');
+  });
   this.route('index', {path: '/'});  
 });
 
