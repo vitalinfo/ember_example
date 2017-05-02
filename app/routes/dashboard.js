@@ -7,7 +7,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: service('session'),
 
   model() {
-  	return this.get('session').session.content.authenticated;
+		return this.get('session').session.content.authenticated;
   },
 
   actions: {
