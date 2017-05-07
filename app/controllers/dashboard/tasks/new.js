@@ -4,9 +4,7 @@ export default Ember.Controller.extend({
 	actions: {
 		save(task) {
 			let newTask = task;
-			newTask.save().catch((error) => {
-				this.set('errorMessage', error.errors)
-			})
+			newTask.save().catch((error) => {})
 		}
 	}
 });

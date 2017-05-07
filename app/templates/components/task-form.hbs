@@ -1,13 +1,23 @@
 <form {{action "submit" on="submit"}}>
-  <label for="title">Title</label>
-  {{input value=task.title placeholder="Enter Title"}}
+	<div>
+	  <label for="title">Title</label>
+  	{{input value=task.title placeholder="Enter Title"}}
+  	{{#each task.errors.title as |error|}}
+	    <div class="error">
+	      {{error.message}}
+	    </div>
+		{{/each}}
+  </div> 	
 
-  <label for="start">Start</label>
-  {{date-picker date=task.start_at valueFormat='YYYY-MM-DD'}}
+	<div>
+	  <label for="start">Start</label>
+  	{{date-picker date=task.start_at valueFormat='YYYY-MM-DD'}}
+  	{{#each task.errors.start_at as |error|}}
+	    <div class="error">
+	      {{error.message}}
+	    </div>
+		{{/each}}
+	</div>  	
 
   <button type="submit">Submit</button>
 </form>
-
-{{#if errorMessage}}
-  {{errorMessage}}
-{{/if}}
