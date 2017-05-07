@@ -1,4 +1,10 @@
-<div>
-asdsad
-
-</div>
+<div>{{#link-to 'dashboard.tasks.new'}}New{{/link-to}}</div>
+{{outlet}}
+<table>
+	{{#each model as |task|}}
+		<tr>
+			<td>{{task.title}}</td>
+			<td>{{task.start_at}}</td>
+		</tr>
+	{{/each}}
+</table>

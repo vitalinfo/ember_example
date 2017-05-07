@@ -1,0 +1,13 @@
+<form {{action "submit" on="submit"}}>
+  <label for="title">Title</label>
+  {{input value=task.title placeholder="Enter Title"}}
+
+  <label for="start">Start</label>
+  {{date-picker date=task.start_at valueFormat='YYYY-MM-DD'}}
+
+  <button type="submit">Submit</button>
+</form>
+
+{{#if errorMessage}}
+  {{errorMessage}}
+{{/if}}
