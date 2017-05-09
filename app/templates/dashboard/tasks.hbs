@@ -3,6 +3,7 @@
 <table>
 	{{#each model as |task|}}
 		<tr>
+			<td>{{input type="checkbox" checked=task.completed change=(action "triggerCompleted" task)}}</td>
 			<td>{{task.title}}</td>
 			<td>{{task.start_at}}</td>
 		</tr>
